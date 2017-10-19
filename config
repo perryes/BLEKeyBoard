@@ -1,0 +1,9 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = true
+	ignorecase = true
+	precomposeunicode = true
+[remote "remotekeyboard"]
+	url = https://liuyangeml@bitbucket.org/liuyangeml/remotekeyboard.git
+	fetch = +refs/heads/*:refs/remotes/remotekeyboard/*

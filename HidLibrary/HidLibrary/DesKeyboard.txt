@@ -1,0 +1,127 @@
+with report id, worked
+<05010906 a1018501 050719e0 29e71500 25017501 95088102 95017508 81010508 19012905 95057501 91029501 75039101 05071900 2aff0095 06750815 0026ff00 810005ff 09037508 95018102 c0050c09 01a10185 52050c75 01950115 00250109 cd810609 b5810209 b6810209 b8810609 e2810609 ea810209 e9810281 01c0>
+
+
+
+Document hid keyboard
+
+<05010906 A1010507 19E029E7 15002501 75019508 81029501 75088101 95057501 05081901 29059102 95017503 91019506 7508 1500 25650507 190029 658100C0>
+
+
+
+
+Android Example
+0501 0906 A101 0507 19E0 29E7 1500 2501 7501 9508 8102 9501 7508 8101 9505 7501 0508 1901 2905 9102 9501 7503 9101 9506 7508 1500 2565 0507 1900 2965 8100 C0
+
+
+Typee
+
+<05010906 a1018501 050719e0 29e71500 25017501 95088102 95017508 81010508 19012905 95057501 91029501 75039101 05071900 2aff0095 06750815 0026ff00 810005ff 09037508 95018102 c0050c09 01a10185 52050c75 01950115 00250109 cd810609 b5810209 b6810209 b8810609 e2810609 ea810209 e9810281 01c0>
+
+<0501
+ 0906
+ a101
+ 8501
+ 0507
+ 19e0
+ 29e7
+ 1500
+ 2501
+ 7501
+ 9508
+ 8102
+ 9501
+ 7508
+ 8101
+ 9505
+ 7501
+ 0508
+ 1901
+ 2905
+ 9102
+ 9501
+ 7503
+ 9101
+ 9506
+ 7508
+ 1500
+ 25ff
+ 0507
+ 1900
+ 29ff
+ 8100
+ c005
+ 0109
+ 02a1
+ 0185
+ 0209
+ 01a1
+ 0005
+ 0919
+ 0129
+ 0315
+ 0025
+ 0175
+ 0195
+ 0381
+ 0295
+ 0175
+ 0581
+ 0105
+ 0109
+ 3009
+ 3115
+ 8125
+ 7f75
+ 0895
+ 0281
+ 0609
+ 3815
+ 8125
+ 7f75
+ 0895
+ 0181
+ 06c0
+ c0>
+
+
+USAGE_PAGE(1),      0x01,       // Generic Desktop Ctrls
+USAGE(1),           0x06,       // Keyboard
+COLLECTION(1),      0x01,       // Application
+USAGE_PAGE(1),      0x07,       //   Kbrd/Keypad
+USAGE_MINIMUM(1), (byte) 0xE0,
+USAGE_MAXIMUM(1), (byte) 0xE7,
+LOGICAL_MINIMUM(1), 0x00,
+LOGICAL_MAXIMUM(1), 0x01,
+REPORT_SIZE(1),     0x01,       //   1 byte (Modifier)
+REPORT_COUNT(1),    0x08,
+INPUT(1),           0x02,       //   Data,Var,Abs,No Wrap,Linear,Preferred State,No Null Position
+REPORT_COUNT(1),    0x01,       //   1 byte (Reserved)
+REPORT_SIZE(1),     0x08,
+INPUT(1),           0x01,       //   Const,Array,Abs,No Wrap,Linear,Preferred State,No Null Position
+REPORT_COUNT(1),    0x05,       //   5 bits (Num lock, Caps lock, Scroll lock, Compose, Kana)
+REPORT_SIZE(1),     0x01,
+USAGE_PAGE(1),      0x08,       //   LEDs
+USAGE_MINIMUM(1),   0x01,       //   Num Lock
+USAGE_MAXIMUM(1),   0x05,       //   Kana
+
+OUTPUT(1),          0x02,       //   Data,Var,Abs,No Wrap,Linear,Preferred State,No Null Position,Non-volatile
+REPORT_COUNT(1),    0x01,       //   3 bits (Padding)
+REPORT_SIZE(1),     0x03,
+
+OUTPUT(1),          0x01,       //   Const,Array,Abs,No Wrap,Linear,Preferred State,No Null Position,Non-volatile
+REPORT_COUNT(1),    0x06,       //   6 bytes (Keys)
+REPORT_SIZE(1),     0x08,
+LOGICAL_MINIMUM(1), 0x00,
+LOGICAL_MAXIMUM(1), 0x65,       //   101 keys
+USAGE_PAGE(1),      0x07,       //   Kbrd/Keypad
+USAGE_MINIMUM(1),   0x00,
+USAGE_MAXIMUM(1),   0x65,
+INPUT(1),           0x00,       //   Data,Array,Abs,No Wrap,Linear,Preferred State,No Null Position
+END_COLLECTION(0),
+
+
+
+
+
+
