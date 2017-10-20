@@ -1,14 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!--
-   MouseProperty.plist
-   MacKeyboard
-
-   Created by liuyang on 2017/10/19.
-   Copyright (c) 2017年 liuyang. All rights reserved.
--->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-    <dict>
-    
-    </dict>
+<dict>
+	<key>0000 - ServiceRecordHandle</key>
+	<real>65578</real>
+	<key>0001 - ServiceClassIDList (HID)</key>
+	<array>
+		<data>ESQ=</data>
+	</array>
+	<key>0004 - ProtocolDescriptionList {{L2CAP, PSM for BT-HID Control channel}. {HID}}</key>
+	<array>
+		<array>
+			<data>AQA=</data>
+			<dict>
+				<key>DataElementType</key>
+				<integer>1</integer>
+				<key>DataElementValue</key>
+				<data>ABE=</data>
+			</dict>
+		</array>
+		<array>
+			<data>ABE=</data>
+		</array>
+	</array>
+	<key>0005 - BrowseGroupList (top level group - PublicBrowseRoot)</key>
+	<array>
+		<data>EAI=</data>
+	</array>
+	<key>0006 - LanguageBaseAttributeIDList (Eng, UTF-8, PrimaryLang)</key>
+	<array>
+		<dict>
+			<key>DataElementType</key>
+			<integer>1</integer>
+			<key>DataElementValue</key>
+			<data>ZW4=</data>
+		</dict>
+		<dict>
+			<key>DataElementType</key>
+			<integer>1</integer>
+			<key>DataElementValue</key>
+			<data>AGo=</data>
+		</dict>
+		<dict>
+			<key>DataElementType</key>
+			<integer>1</integer>
+			<key>DataElementValue</key>
+			<data>AQA=</data>
+		</dict>
+	</array>
+	<key>0009 - BluetoothProfileDescriptorList (HID, versionNum)</key>
+	<array>
+		<array>
+			<data>ESQ=</data>
+			<dict>
+				<key>DataElementType</key>
+				<integer>1</integer>
+				<key>DataElementValue</key>
+				<data>AQA=</data>
+			</dict>
+		</array>
+	</array>
+	<key>000D - AdditionalProtocolDescriptorLists {{L2CAP, PSM for BT-HID Interrupt channel}, {HID}}</key>
+	<array>
+		<array>
+			<array>
+				<data>AQA=</data>
+				<dict>
+					<key>DataElementType</key>
+					<integer>1</integer>
+					<key>DataElementValue</key>
+					<data>ABM=</data>
+				</dict>
+			</array>
+			<array>
+				<data>ABE=</data>
+			</array>
+		</array>
+	</array>
+	<key>0100 - ServiceName</key>
+	<string>Virtual Mouse</string>
+	<key>0101 - ServiceDescription</key>
+	<string>Mouse</string>
+	<key>0102 - ProviderName</key>
+	<string>LY</string>
+	<key>0201 - HIDParserVersion</key>
+	<dict>
+		<key>DataElementType</key>
+		<integer>1</integer>
+		<key>DataElementValue</key>
+		<data>ARE=</data>
+	</dict>
+	<key>0202 - HIDDeviceSubclass (Mouse)</key>
+	<integer>128</integer>
+	<key>0203 - HIDCountryCode ( ??)</key>
+	<dict>
+		<key>DataElementType</key>
+		<integer>1</integer>
+		<key>DataElementSize</key>
+		<integer>0</integer>
+		<key>DataElementValue</key>
+		<data>DQ==</data>
+	</dict>
+	<key>0204 - HIDVirtualCable (Yes)</key>
+	<true/>
+	<key>0205 - HIDReconnectInitiate (Yes)</key>
+	<true/>
+	<key>0206 - HIDDescriptorList</key>
+	<array>
+		<array>
+			<dict>
+				<key>DataElementType</key>
+				<integer>1</integer>
+				<key>DataElementSize</key>
+				<integer>0</integer>
+				<key>DataElementValue</key>
+				<data>Ig==</data>
+			</dict>
+			<dict>
+				<key>DataElementType</key>
+				<integer>4</integer>
+				<key>DataElementValue</key>
+				<data>BQEJAqEBhVEJAaEABQkZASkDFQAlAZUDdQGBApUBdQWBAQUBCTAJMRWBJX91CJUDgQbAwA==</data>
+			</dict>
+		</array>
+	</array>
+	<key>0207 - HIDLANGIDBaseList {{UnitedStates, Bluetooth String Offset}}</key>
+	<array>
+		<array>
+			<dict>
+				<key>DataElementType</key>
+				<integer>1</integer>
+				<key>DataElementValue</key>
+				<data>BAk=</data>
+			</dict>
+			<dict>
+				<key>DataElementType</key>
+				<integer>1</integer>
+				<key>DataElementValue</key>
+				<data>AQA=</data>
+			</dict>
+		</array>
+	</array>
+	<key>020C - HIDSupervisionTimeout</key>
+	<dict>
+		<key>DataElementType</key>
+		<integer>1</integer>
+		<key>DataElementValue</key>
+		<data>DIA=</data>
+	</dict>
+	<key>020D - HIDNormallyConnectable</key>
+	<true/>
+	<key>020E - HIDBootDevice (True)</key>
+	<true/>
+	<key>020B - HIDProfileVersion</key>
+	<dict>
+		<key>DataElementType</key>
+		<integer>1</integer>
+		<key>DataElementValue</key>
+		<data>AQA=</data>
+	</dict>
+	<key>020A - HIDRemoteWake (True)</key>
+	<true/>
+</dict>
 </plist>

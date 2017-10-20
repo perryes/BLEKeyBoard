@@ -30,7 +30,27 @@
         [self flagsChanged:event];
         return nil;
     }];
+    [NSEvent addLocalMonitorForEventsMatchingMask:NSEventMaskMouseMoved handler:^NSEvent*(NSEvent* event){
+        [self mouseMoved:event];
+        return nil;
+    }];
     
+    [NSEvent addLocalMonitorForEventsMatchingMask:NSEventMaskLeftMouseDown handler:^NSEvent*(NSEvent* event){
+        [self mouseDown:event];
+        return event;
+    }];
+    [NSEvent addLocalMonitorForEventsMatchingMask:NSEventMaskRightMouseDown handler:^NSEvent*(NSEvent* event){
+        [self mouseDown:event];
+        return event;
+    }];
+    [NSEvent addLocalMonitorForEventsMatchingMask:NSEventMaskLeftMouseUp handler:^NSEvent*(NSEvent* event){
+        [self mouseUp:event];
+        return event;
+    }];
+    [NSEvent addLocalMonitorForEventsMatchingMask:NSEventMaskRightMouseUp handler:^NSEvent*(NSEvent* event){
+        [self mouseUp:event];
+        return event;
+    }];
 }
 
 
@@ -60,6 +80,22 @@
     [[AppDelegate getKeyboard] connect:2];
 }
 
+-(void) mouseMoved:(NSEvent *)event {
+    
+    [[AppDelegate getKeyboard] sendMouse:ceilf(event.deltaX) Dy:ceilf(event.deltaY) Wheel:false LeftButton:false RightButton:false];
+}
+
+-(void) mouseDown:(NSEvent *)event{
+    bool leftDown = (NSEvent.pressedMouseButtons & 0x01) == 0x01;
+    bool rightDown = (NSEvent.pressedMouseButtons & 0x02) == 0x02;
+    [[AppDelegate getKeyboard] sendMouse:0 Dy:0 Wheel:false LeftButton:leftDown RightButton:rightDown];
+}
+
+-(void) mouseUp:(NSEvent *)event{
+    bool leftDown = (NSEvent.pressedMouseButtons & 0x01) == 0x01;
+    bool rightDown = (NSEvent.pressedMouseButtons & 0x02) == 0x02;
+    [[AppDelegate getKeyboard] sendMouse:0 Dy:0 Wheel:false LeftButton:leftDown RightButton:rightDown];
+}
 
 
 @end

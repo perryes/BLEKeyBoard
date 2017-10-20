@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D2FAD941F998EF200360289 /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D4C63291F924210008EDFD6 /* IOBluetooth.framework */; };
 		9D4A8DF11F92256800CA68CF /* HidLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4A8DF01F92256800CA68CF /* HidLibrary.h */; };
 		9D4A8DF31F92256800CA68CF /* HidLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4A8DF21F92256800CA68CF /* HidLibrary.m */; };
 		9D4A8E831F922BC000CA68CF /* HidLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4A8DF21F92256800CA68CF /* HidLibrary.m */; };
@@ -15,7 +16,6 @@
 		9D4C63241F923DFD008EDFD6 /* BTKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4C63221F923DFD008EDFD6 /* BTKeyboard.m */; };
 		9D4C63261F923E39008EDFD6 /* BTKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4C63251F923E39008EDFD6 /* BTKeyboard.h */; };
 		9D4C63271F923E39008EDFD6 /* BTKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4C63251F923E39008EDFD6 /* BTKeyboard.h */; };
-		9D4C632A1F924210008EDFD6 /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D4C63291F924210008EDFD6 /* IOBluetooth.framework */; };
 		9D4C632D1F924876008EDFD6 /* BTDeviceWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4C632C1F924875008EDFD6 /* BTDeviceWrapper.h */; };
 		9D4C632E1F924876008EDFD6 /* BTDeviceWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4C632C1F924875008EDFD6 /* BTDeviceWrapper.h */; };
 		9D4C63301F92489F008EDFD6 /* BTDeviceWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4C632F1F92489F008EDFD6 /* BTDeviceWrapper.m */; };
@@ -48,9 +48,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D2FAD941F998EF200360289 /* IOBluetooth.framework in Frameworks */,
 				9D4C633B1F9312AB008EDFD6 /* Cocoa.framework in Frameworks */,
 				9D4C63391F93111B008EDFD6 /* IOKit.framework in Frameworks */,
-				9D4C632A1F924210008EDFD6 /* IOBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

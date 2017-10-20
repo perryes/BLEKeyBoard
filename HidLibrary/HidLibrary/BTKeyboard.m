@@ -7,13 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <IOBluetooth/Bluetooth.h>
-#import <IOBluetooth/IOBluetooth.h>
-#import <IOBluetooth/IOBluetoothTypes.h>
-#import <IOBluetooth/IOBluetoothUserLib.h>
-#import <IOBluetooth/IOBluetoothUtilities.h>
-#import <IOBluetooth/OBEX.h>
-#import <IOBluetooth/OBEXBluetooth.h>
+
+
 #import "BTKeyboard.h"
 #import "KeyCodes.h"
 #import <Cocoa/Cocoa.h>
@@ -50,10 +45,15 @@ enum BTMessageType: UInt8 {
     // Minor Device Class - Keyboard
     // Major Device Class - Peripheral
     // Limited Discoverable Mode
-    [controllor setClassOfDevice:0x002540 forTimeInterval:60];
+    // 1 00101 1000 00 00         Mouse
+    [controllor setClassOfDevice:0x002580 forTimeInterval:60];
+    
+    //Keyboard
+    //[controllor setClassOfDevice:0x002540 forTimeInterval:60];
     
     
-    NSString* bundlePath = [[NSBundle mainBundle] pathForResource:@"KeyboardProperty" ofType:@"plist"];
+//    NSString* bundlePath = [[NSBundle mainBundle] pathForResource:@"KeyboardProperty" ofType:@"plist"];
+        NSString* bundlePath = [[NSBundle mainBundle] pathForResource:@"MouseProperty" ofType:@"plist"];
     NSDictionary* dct = [[NSDictionary alloc] initWithContentsOfFile:bundlePath];
     self.serviceRecord = [IOBluetoothSDPServiceRecord publishedServiceRecordWithDictionary:dct];
     IOBluetoothUserNotification *  regisControlResult = [IOBluetoothL2CAPChannel registerForChannelOpenNotifications:self selector:@selector(newChannelNotification:Channel:) withPSM:kBluetoothL2CAPPSMHIDControl direction:kIOBluetoothUserNotificationChannelDirectionIncoming];
@@ -277,22 +277,74 @@ enum BTMessageType: UInt8 {
         modifier |= 1;
     }
     
-    UInt8 bytes[] = {
-        0xA1,      // 0 DATA | INPUT (HIDP Bluetooth)
+//    UInt8 bytes[] = {
+//        0xA1,      // 0 DATA | INPUT (HIDP Bluetooth)
+//
+//        0x01,      // 0 Report ID
+//        modifier,  // 1 Modifier Keys
+//        0x00,      // 2 Reserved
+//        keyCode,   // 3 Keys ( 6 keys can be held at the same time )
+//        0x00,      // 4
+//        0x00,      // 5
+//        0x00,      // 6
+//        0x00,      // 7
+//        0x00,      // 8
+//        0x00       // 9
+//    };
+//
+//    [self sendData:bytes Length:11];
+    
+   
+}
 
-        0x01,      // 0 Report ID
-        modifier,  // 1 Modifier Keys
-        0x00,      // 2 Reserved
-        keyCode,   // 3 Keys ( 6 keys can be held at the same time )
-        0x00,      // 4
-        0x00,      // 5
-        0x00,      // 6
-        0x00,      // 7
-        0x00,      // 8
-        0x00       // 9
+-(void) sendMouse:(int) dx Dy: (int) dy Wheel: (BOOL) wheel LeftButton: (BOOL) leftButton RightButton: (BOOL) rightButton{
+    UInt8 button = 0x00;
+    if(leftButton){
+        button |=1 ;
+    }
+    if(rightButton){
+        button|=2;
+    }
+    if(wheel){
+        button|=4;
+    }
+    button = button & 0x07;
+    
+    
+    if(dx > 127){
+        dx = 127;
+    }
+    if(dx < -127){
+        dx = -127;
+    }
+    if(dy > 127){
+        dy = 127;
+    }
+    if(dy < -127){
+        dy = -127;
+    }
+    int8_t x = dx;
+    int8_t y = dy;
+    NSLog(@"x = %x, y = %x", x, y);
+    int8_t bytes[] = {
+        0xA1,     // 0 DATA | INPUT (HIDP Bluetooth)
+        0x51,      // 0 Report ID
+        button,  // buttons
+        x,      // x
+        y,   // y
+        0x00
+        
     };
     
-    [self sendData:bytes Length:11];
+    if (self.deviceWrapper.interruptChannel) {
+        IOReturn result = [self.deviceWrapper.interruptChannel writeAsync:(bytes) length:6 refcon:nil];
+        if (result != kIOReturnSuccess) {
+            NSLog(@"Buff Data Failed \(channel.psm)");
+        }else{
+            NSLog(@"Buff data success");
+        }
+    }
+    
 }
 
 -(void) connect:(int)type{
@@ -309,7 +361,8 @@ enum BTMessageType: UInt8 {
             //小米手机
             //LIUYANG-NUC
             //Galaxy S8+
-            if([d.name isEqualTo:@"Samsung Galaxy Note 3"]){
+            //王佳星的MacBook Pro
+            if([d.name isEqualTo:@"LIUYANG-NUC"]){
 //            if([d.name isEqualTo:@"iPet"]){
                 self.deviceWrapper = [[BTDeviceWrapper alloc] init];
                 self.deviceWrapper.device = d;
