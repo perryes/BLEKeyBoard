@@ -2,12 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:KeyboardLib/KeyboardLib.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:iKeyboard/iKeyboard.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:MacKeyboard/MacKeyboard.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:HidLibrary/HidLibrary.xcodeproj">
    </FileRef>
 </Workspace>

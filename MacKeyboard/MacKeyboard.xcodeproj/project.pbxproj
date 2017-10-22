@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9D0ACF361F98DB8F00B07F55 /* MouseProperty.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D0ACF351F98DB8F00B07F55 /* MouseProperty.plist */; };
-		9D0ACF371F98DEB000B07F55 /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8887FD1F98D68600A16C1E /* IOBluetooth.framework */; };
 		9D4A8E071F9225D700CA68CF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4A8E061F9225D700CA68CF /* AppDelegate.m */; };
 		9D4A8E0A1F9225D700CA68CF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4A8E091F9225D700CA68CF /* ViewController.m */; };
 		9D4A8E0C1F9225D700CA68CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D4A8E0B1F9225D700CA68CF /* Assets.xcassets */; };
@@ -16,8 +15,8 @@
 		9D4A8E121F9225D700CA68CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4A8E111F9225D700CA68CF /* main.m */; };
 		9D4A8E1D1F9225D700CA68CF /* MacKeyboardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4A8E1C1F9225D700CA68CF /* MacKeyboardTests.m */; };
 		9D4A8E281F9225D700CA68CF /* MacKeyboardUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4A8E271F9225D700CA68CF /* MacKeyboardUITests.m */; };
-		9D4C631D1F923B77008EDFD6 /* libHidLibrary.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D4A8E371F9225F400CA68CF /* libHidLibrary.dylib */; };
 		9D8887FC1F98838B00A16C1E /* KeyboardProperty.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D8887FB1F98838B00A16C1E /* KeyboardProperty.plist */; };
+		9D93F28D1F9CB864009DD676 /* libKeyboardLib.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D93F28C1F9CB859009DD676 /* libKeyboardLib.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +57,7 @@
 		9D4A8E371F9225F400CA68CF /* libHidLibrary.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libHidLibrary.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D8887FB1F98838B00A16C1E /* KeyboardProperty.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = KeyboardProperty.plist; sourceTree = "<group>"; };
 		9D8887FD1F98D68600A16C1E /* IOBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetooth.framework; path = System/Library/Frameworks/IOBluetooth.framework; sourceTree = SDKROOT; };
+		9D93F28C1F9CB859009DD676 /* libKeyboardLib.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libKeyboardLib.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D0ACF371F98DEB000B07F55 /* IOBluetooth.framework in Frameworks */,
-				9D4C631D1F923B77008EDFD6 /* libHidLibrary.dylib in Frameworks */,
+				9D93F28D1F9CB864009DD676 /* libKeyboardLib.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +146,7 @@
 		9D4A8E351F9225F400CA68CF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9D93F28C1F9CB859009DD676 /* libKeyboardLib.dylib */,
 				9D8887FD1F98D68600A16C1E /* IOBluetooth.framework */,
 				9D4A8E371F9225F400CA68CF /* libHidLibrary.dylib */,
 			);

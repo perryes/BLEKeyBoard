@@ -1,0 +1,330 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9D93F26F1F9C9ED2009DD676 /* KeyboardLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D93F26E1F9C9ED2009DD676 /* KeyboardLib.h */; };
+		9D93F2711F9C9ED2009DD676 /* KeyboardLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D93F2701F9C9ED2009DD676 /* KeyboardLib.m */; };
+		9D93F2801F9CB7E3009DD676 /* BTKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D93F2771F9CB7E2009DD676 /* BTKeyboard.m */; };
+		9D93F2811F9CB7E3009DD676 /* HidLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D93F2781F9CB7E2009DD676 /* HidLibrary.h */; };
+		9D93F2821F9CB7E3009DD676 /* BTDeviceWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D93F27A1F9CB7E2009DD676 /* BTDeviceWrapper.h */; };
+		9D93F2831F9CB7E3009DD676 /* KeyCodes.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D93F27B1F9CB7E2009DD676 /* KeyCodes.h */; };
+		9D93F2841F9CB7E3009DD676 /* BTKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D93F27C1F9CB7E2009DD676 /* BTKeyboard.h */; };
+		9D93F2851F9CB7E3009DD676 /* KeyCodes.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D93F27D1F9CB7E3009DD676 /* KeyCodes.m */; };
+		9D93F2861F9CB7E3009DD676 /* HidLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D93F27E1F9CB7E3009DD676 /* HidLibrary.m */; };
+		9D93F2871F9CB7E3009DD676 /* BTDeviceWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D93F27F1F9CB7E3009DD676 /* BTDeviceWrapper.m */; };
+		9D93F28A1F9CB81E009DD676 /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D93F2891F9CB808009DD676 /* IOBluetooth.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9D93F26B1F9C9ED2009DD676 /* libKeyboardLib.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libKeyboardLib.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D93F26E1F9C9ED2009DD676 /* KeyboardLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyboardLib.h; sourceTree = "<group>"; };
+		9D93F2701F9C9ED2009DD676 /* KeyboardLib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyboardLib.m; sourceTree = "<group>"; };
+		9D93F2771F9CB7E2009DD676 /* BTKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTKeyboard.m; sourceTree = "<group>"; };
+		9D93F2781F9CB7E2009DD676 /* HidLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HidLibrary.h; sourceTree = "<group>"; };
+		9D93F2791F9CB7E2009DD676 /* DesKeyboard.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DesKeyboard.txt; sourceTree = "<group>"; };
+		9D93F27A1F9CB7E2009DD676 /* BTDeviceWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDeviceWrapper.h; sourceTree = "<group>"; };
+		9D93F27B1F9CB7E2009DD676 /* KeyCodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyCodes.h; sourceTree = "<group>"; };
+		9D93F27C1F9CB7E2009DD676 /* BTKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTKeyboard.h; sourceTree = "<group>"; };
+		9D93F27D1F9CB7E3009DD676 /* KeyCodes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyCodes.m; sourceTree = "<group>"; };
+		9D93F27E1F9CB7E3009DD676 /* HidLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HidLibrary.m; sourceTree = "<group>"; };
+		9D93F27F1F9CB7E3009DD676 /* BTDeviceWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDeviceWrapper.m; sourceTree = "<group>"; };
+		9D93F2891F9CB808009DD676 /* IOBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetooth.framework; path = System/Library/Frameworks/IOBluetooth.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9D93F2681F9C9ED2009DD676 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D93F28A1F9CB81E009DD676 /* IOBluetooth.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9D93F2621F9C9ED2009DD676 = {
+			isa = PBXGroup;
+			children = (
+				9D93F26D1F9C9ED2009DD676 /* KeyboardLib */,
+				9D93F26C1F9C9ED2009DD676 /* Products */,
+				9D93F2881F9CB808009DD676 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9D93F26C1F9C9ED2009DD676 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9D93F26B1F9C9ED2009DD676 /* libKeyboardLib.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9D93F26D1F9C9ED2009DD676 /* KeyboardLib */ = {
+			isa = PBXGroup;
+			children = (
+				9D93F27A1F9CB7E2009DD676 /* BTDeviceWrapper.h */,
+				9D93F27F1F9CB7E3009DD676 /* BTDeviceWrapper.m */,
+				9D93F27C1F9CB7E2009DD676 /* BTKeyboard.h */,
+				9D93F2771F9CB7E2009DD676 /* BTKeyboard.m */,
+				9D93F2791F9CB7E2009DD676 /* DesKeyboard.txt */,
+				9D93F2781F9CB7E2009DD676 /* HidLibrary.h */,
+				9D93F27E1F9CB7E3009DD676 /* HidLibrary.m */,
+				9D93F27B1F9CB7E2009DD676 /* KeyCodes.h */,
+				9D93F27D1F9CB7E3009DD676 /* KeyCodes.m */,
+				9D93F26E1F9C9ED2009DD676 /* KeyboardLib.h */,
+				9D93F2701F9C9ED2009DD676 /* KeyboardLib.m */,
+			);
+			path = KeyboardLib;
+			sourceTree = "<group>";
+		};
+		9D93F2881F9CB808009DD676 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9D93F2891F9CB808009DD676 /* IOBluetooth.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		9D93F2691F9C9ED2009DD676 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D93F2821F9CB7E3009DD676 /* BTDeviceWrapper.h in Headers */,
+				9D93F2811F9CB7E3009DD676 /* HidLibrary.h in Headers */,
+				9D93F26F1F9C9ED2009DD676 /* KeyboardLib.h in Headers */,
+				9D93F2841F9CB7E3009DD676 /* BTKeyboard.h in Headers */,
+				9D93F2831F9CB7E3009DD676 /* KeyCodes.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		9D93F26A1F9C9ED2009DD676 /* KeyboardLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D93F2741F9C9ED2009DD676 /* Build configuration list for PBXNativeTarget "KeyboardLib" */;
+			buildPhases = (
+				9D93F2671F9C9ED2009DD676 /* Sources */,
+				9D93F2681F9C9ED2009DD676 /* Frameworks */,
+				9D93F2691F9C9ED2009DD676 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KeyboardLib;
+			productName = KeyboardLib;
+			productReference = 9D93F26B1F9C9ED2009DD676 /* libKeyboardLib.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9D93F2631F9C9ED2009DD676 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = liuyang;
+				TargetAttributes = {
+					9D93F26A1F9C9ED2009DD676 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 9D93F2661F9C9ED2009DD676 /* Build configuration list for PBXProject "KeyboardLib" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9D93F2621F9C9ED2009DD676;
+			productRefGroup = 9D93F26C1F9C9ED2009DD676 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9D93F26A1F9C9ED2009DD676 /* KeyboardLib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9D93F2671F9C9ED2009DD676 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D93F2871F9CB7E3009DD676 /* BTDeviceWrapper.m in Sources */,
+				9D93F2801F9CB7E3009DD676 /* BTKeyboard.m in Sources */,
+				9D93F2861F9CB7E3009DD676 /* HidLibrary.m in Sources */,
+				9D93F2851F9CB7E3009DD676 /* KeyCodes.m in Sources */,
+				9D93F2711F9C9ED2009DD676 /* KeyboardLib.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		9D93F2721F9C9ED2009DD676 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		9D93F2731F9C9ED2009DD676 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		9D93F2751F9C9ED2009DD676 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 43UM6MQ7X4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9D93F2761F9C9ED2009DD676 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 43UM6MQ7X4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9D93F2661F9C9ED2009DD676 /* Build configuration list for PBXProject "KeyboardLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D93F2721F9C9ED2009DD676 /* Debug */,
+				9D93F2731F9C9ED2009DD676 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9D93F2741F9C9ED2009DD676 /* Build configuration list for PBXNativeTarget "KeyboardLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D93F2751F9C9ED2009DD676 /* Debug */,
+				9D93F2761F9C9ED2009DD676 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9D93F2631F9C9ED2009DD676 /* Project object */;
+}

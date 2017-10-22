@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <IOBluetooth/IOBluetooth.h>
 #import "BTDeviceWrapper.h"
 
 enum BTHandShake:UInt8 {

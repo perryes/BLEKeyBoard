@@ -7,10 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <IOBluetooth/Bluetooth.h>
 #import <IOBluetooth/IOBluetooth.h>
+#import <IOBluetooth/IOBluetoothTypes.h>
+#import <IOBluetooth/IOBluetoothUserLib.h>
+#import <IOBluetooth/IOBluetoothUtilities.h>
+#import <IOBluetooth/OBEX.h>
+#import <IOBluetooth/OBEXBluetooth.h>
 #import "BTKeyboard.h"
 #import "KeyCodes.h"
 #import <Cocoa/Cocoa.h>
+
 
 enum BTMessageType: UInt8 {
     Handshake = 0,

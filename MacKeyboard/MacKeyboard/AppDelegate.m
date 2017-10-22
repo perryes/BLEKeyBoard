@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "HidLibrary.h"
 #import "BTKeyboard.h"
 
 
@@ -18,9 +17,7 @@
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    
-    HidLibrary* lb = [HidLibrary alloc];
-    [lb testMethodString:@"hellp"];
+
     
 }
 
