@@ -346,8 +346,8 @@
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
 				HEADER_SEARCH_PATHS = (
-					"$(inherited)/**",
-					"$(SRCROOT)/**",
+					"$(inherited)",
+					"$(SRCROOT)",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -364,8 +364,8 @@
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
 				HEADER_SEARCH_PATHS = (
-					"$(inherited)/**",
-					"$(SRCROOT)/**",
+					"$(inherited)",
+					"$(SRCROOT)",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
