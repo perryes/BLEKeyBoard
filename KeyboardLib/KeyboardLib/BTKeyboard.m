@@ -54,13 +54,12 @@ enum BTMessageType: UInt8 {
     // 1 00101 1000 00 00         Mouse
     // 1 00101 1100 00 00  Mouse and Keyboard
     [controllor setClassOfDevice:0x0025C0 forTimeInterval:60];
-    
     //Keyboard
     //[controllor setClassOfDevice:0x002540 forTimeInterval:60];
     
     
 //    NSString* bundlePath = [[NSBundle mainBundle] pathForResource:@"KeyboardProperty" ofType:@"plist"];
-        NSString* bundlePath = [[NSBundle mainBundle] pathForResource:@"MouseProperty" ofType:@"plist"];
+    NSString* bundlePath = [[NSBundle mainBundle] pathForResource:@"MouseProperty" ofType:@"plist"];
     NSDictionary* dct = [[NSDictionary alloc] initWithContentsOfFile:bundlePath];
     self.serviceRecord = [IOBluetoothSDPServiceRecord publishedServiceRecordWithDictionary:dct];
     IOBluetoothUserNotification *  regisControlResult = [IOBluetoothL2CAPChannel registerForChannelOpenNotifications:self selector:@selector(newChannelNotification:Channel:) withPSM:kBluetoothL2CAPPSMHIDControl direction:kIOBluetoothUserNotificationChannelDirectionIncoming];
@@ -96,7 +95,6 @@ enum BTMessageType: UInt8 {
     NSLog(@"new channel opened: channel = ");
     
     [channel setDelegate:self];
-    
 }
 
 
@@ -169,19 +167,7 @@ enum BTMessageType: UInt8 {
 }
 
 - (void)l2capChannelClosed:(IOBluetoothL2CAPChannel*)l2capChannel{
-    
     NSLog(@"channel closed, channel = %d" , l2capChannel.PSM);
-//    IOBluetoothL2CAPChannel* channel = nil;
-    
-    if(l2capChannel.PSM == kBluetoothL2CAPPSMHIDControl){
-        
-//        [self.deviceWrapper.device openL2CAPChannelAsync:&channel withPSM:kBluetoothL2CAPPSMHIDControl delegate:self];
-//        [self.deviceWrapper.device openL2CAPChannelAsync:&channel withPSM:kBluetoothL2CAPPSMHIDInterrupt delegate:self];
-        
-    }
-//    IOReturn result = [l2capChannel.device openL2CAPChannelAsync:&channel withPSM: l2capChannel.PSM delegate:self];
-//    NSLog(@"reopen channel result %d", result);
-//    [l2capChannel.device openConnection : self withPageTimeout:5 * 60 * 1000 authenticationRequired:NO];
 }
 
 - (void)l2capChannelReconfigured:(IOBluetoothL2CAPChannel*)l2capChannel{
@@ -203,34 +189,7 @@ enum BTMessageType: UInt8 {
         self.deviceWrapper = [[BTDeviceWrapper alloc] init];
         self.deviceWrapper.device = device;
     }
-//
-//
-//    IOBluetoothL2CAPChannel* control = [[IOBluetoothL2CAPChannel alloc] init];
-//    IOReturn channelResult = [self.deviceWrapper.device openL2CAPChannelSync: &control withPSM:kBluetoothL2CAPPSMHIDControl delegate:self];
-//    self.deviceWrapper.controlChannel = control;
-//
-//    if(channelResult != kIOReturnSuccess){
-//        NSLog(@"open control channel failed %d", channelResult);
-//        return NO;
-//    }
-//
-//    self.deviceWrapper.controlChannel = control;
-//
-//
-//    NSLog(@"open control channel result %d", channelResult);
-//
-//    IOBluetoothL2CAPChannel* interrupt = [[IOBluetoothL2CAPChannel alloc] init];
-//    IOReturn interruptChannelResult = [self.deviceWrapper.device openL2CAPChannelSync: &interrupt withPSM:kBluetoothL2CAPPSMHIDControl delegate:self];
-//
-//    if(interruptChannelResult != kIOReturnSuccess ){
-//        NSLog(@"open interrupt channel failed");
-//        return NO;
-//    }
-//
-//    self.deviceWrapper.interruptChannel = interrupt;
-//
-//    NSLog(@"open interrupt channel result %d", interruptChannelResult);
-//
+    
     return YES;
 }
 
@@ -362,10 +321,7 @@ enum BTMessageType: UInt8 {
 }
 
 -(void) connect:(int)type{
-    NSMutableDictionary* d = [[NSMutableDictionary alloc] init];
-//    kIOBluetoothL2CAPChannelMaxAllowedIncomingMTU        @"MaxAllowedIncomingMTU"
-//#define kIOBluetoothL2CAPChannelDesiredOutgoingMTU
-    
+   
     if(self.deviceWrapper == nil || self.deviceWrapper.device == nil){
         NSArray* devices = [IOBluetoothDevice pairedDevices];
         for(id device in devices){
@@ -383,11 +339,6 @@ enum BTMessageType: UInt8 {
             }
         }
     }
-    
-    
-    NSNumber* i = [[NSNumber alloc] initWithInt:50];
-    [d setValue:i forKey:kIOBluetoothL2CAPChannelMaxAllowedIncomingMTU];
-    [d setValue:i forKey:kIOBluetoothL2CAPChannelDesiredOutgoingMTU];
     
     if(type == 0 || type == 2){
         IOBluetoothL2CAPChannel* channel = [[IOBluetoothL2CAPChannel alloc] init];

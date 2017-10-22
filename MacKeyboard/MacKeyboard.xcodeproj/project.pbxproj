@@ -455,7 +455,7 @@
 				DEVELOPMENT_TEAM = 43UM6MQ7X4;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../HidLibrary/**",
+					"$(SRCROOT)/../KeyboardLib/**",
 					"$(SRCROOT)",
 				);
 				INFOPLIST_FILE = MacKeyboard/Info.plist;
@@ -477,7 +477,7 @@
 				DEVELOPMENT_TEAM = 43UM6MQ7X4;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../HidLibrary/**",
+					"$(SRCROOT)/../KeyboardLib/**",
 					"$(SRCROOT)",
 				);
 				INFOPLIST_FILE = MacKeyboard/Info.plist;
