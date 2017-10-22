@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>0000 - ServiceRecordHandle</key>
-	<real>65578</real>
+	<real>65538</real>
 	<key>0001 - ServiceClassIDList (HID)</key>
 	<array>
 		<data>ESQ=</data>
@@ -91,7 +91,7 @@
 		<data>ARE=</data>
 	</dict>
 	<key>0202 - HIDDeviceSubclass (Mouse)</key>
-	<integer>128</integer>
+	<integer>64</integer>
 	<key>0203 - HIDCountryCode ( ??)</key>
 	<dict>
 		<key>DataElementType</key>
@@ -120,7 +120,7 @@
 				<key>DataElementType</key>
 				<integer>4</integer>
 				<key>DataElementValue</key>
-				<data>BQEJAqEBhVEJAaEABQkZASkDFQAlAZUDdQGBApUBdQWBAQUBCTAJMRWBJX91CJUDgQbAwA==</data>
+				<data>BQEJAqEBhVEJAaEABQkZASkDFQAlAZUDdQGBApUBdQWBAQUBCTAJMQk4FYElf3UIlQOBBsDABQEJBqEBhQEFBxngKecVACUBdQGVCIEClQF1CIEBBQgZASkFlQV1AZEClQF1A5EBBQcZACr/AJUGdQgVACb/AIEABf8JA3UIlQGBAsAFDAkBoQGFUgUMdQGVARUAJQEJzYEGCbWBAgm2gQIJuIEGCeKBBgnqgQIJ6YECgQHA</data>
 			</dict>
 		</array>
 	</array>

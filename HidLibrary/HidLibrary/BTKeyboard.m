@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-
+#import <IOBluetooth/IOBluetooth.h>
 #import "BTKeyboard.h"
 #import "KeyCodes.h"
 #import <Cocoa/Cocoa.h>
@@ -46,7 +45,8 @@ enum BTMessageType: UInt8 {
     // Major Device Class - Peripheral
     // Limited Discoverable Mode
     // 1 00101 1000 00 00         Mouse
-    [controllor setClassOfDevice:0x002580 forTimeInterval:60];
+    // 1 00101 1100 00 00  Mouse and Keyboard
+    [controllor setClassOfDevice:0x0025C0 forTimeInterval:60];
     
     //Keyboard
     //[controllor setClassOfDevice:0x002540 forTimeInterval:60];
@@ -277,27 +277,27 @@ enum BTMessageType: UInt8 {
         modifier |= 1;
     }
     
-//    UInt8 bytes[] = {
-//        0xA1,      // 0 DATA | INPUT (HIDP Bluetooth)
-//
-//        0x01,      // 0 Report ID
-//        modifier,  // 1 Modifier Keys
-//        0x00,      // 2 Reserved
-//        keyCode,   // 3 Keys ( 6 keys can be held at the same time )
-//        0x00,      // 4
-//        0x00,      // 5
-//        0x00,      // 6
-//        0x00,      // 7
-//        0x00,      // 8
-//        0x00       // 9
-//    };
-//
-//    [self sendData:bytes Length:11];
+    UInt8 bytes[] = {
+        0xA1,      // 0 DATA | INPUT (HIDP Bluetooth)
+
+        0x01,      // 0 Report ID
+        modifier,  // 1 Modifier Keys
+        0x00,      // 2 Reserved
+        keyCode,   // 3 Keys ( 6 keys can be held at the same time )
+        0x00,      // 4
+        0x00,      // 5
+        0x00,      // 6
+        0x00,      // 7
+        0x00,      // 8
+        0x00       // 9
+    };
+
+    [self sendData:bytes Length:11];
     
    
 }
 
--(void) sendMouse:(int) dx Dy: (int) dy Wheel: (BOOL) wheel LeftButton: (BOOL) leftButton RightButton: (BOOL) rightButton{
+-(void) sendMouse:(int) dx Dy: (int) dy Wheel: (int) wheel LeftButton: (BOOL) leftButton RightButton: (BOOL) rightButton{
     UInt8 button = 0x00;
     if(leftButton){
         button |=1 ;
@@ -305,12 +305,13 @@ enum BTMessageType: UInt8 {
     if(rightButton){
         button|=2;
     }
-    if(wheel){
-        button|=4;
-    }
+//    if(wheel){
+//        button|=4;
+//    }
     button = button & 0x07;
     
-    
+    dx = dx * 2;
+    dy = dy * 2;
     if(dx > 127){
         dx = 127;
     }
@@ -323,16 +324,22 @@ enum BTMessageType: UInt8 {
     if(dy < -127){
         dy = -127;
     }
+    if(wheel > 127){
+        wheel = 127;
+    }
+    if(wheel < -127){
+        wheel = -127;
+    }
     int8_t x = dx;
     int8_t y = dy;
-    NSLog(@"x = %x, y = %x", x, y);
+    NSLog(@"x = %d, y = %d", x, y);
     int8_t bytes[] = {
         0xA1,     // 0 DATA | INPUT (HIDP Bluetooth)
         0x51,      // 0 Report ID
         button,  // buttons
         x,      // x
         y,   // y
-        0x00
+        wheel
         
     };
     
@@ -362,7 +369,7 @@ enum BTMessageType: UInt8 {
             //LIUYANG-NUC
             //Galaxy S8+
             //王佳星的MacBook Pro
-            if([d.name isEqualTo:@"LIUYANG-NUC"]){
+            if([d.name isEqualTo:@"王佳星的MacBook Pro"]){
 //            if([d.name isEqualTo:@"iPet"]){
                 self.deviceWrapper = [[BTDeviceWrapper alloc] init];
                 self.deviceWrapper.device = d;

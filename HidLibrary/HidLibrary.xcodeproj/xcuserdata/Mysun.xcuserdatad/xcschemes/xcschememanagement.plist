@@ -12,7 +12,7 @@
 		<key>HidLibrary.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>0</integer>
 		</dict>
 		<key>HidLibraryiOS.xcscheme</key>
 		<dict>
