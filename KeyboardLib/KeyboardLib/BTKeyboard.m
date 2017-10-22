@@ -92,7 +92,8 @@ enum BTMessageType: UInt8 {
 }
 
 -(void) newChannelNotification: (IOBluetoothUserNotification*)noti Channel :(IOBluetoothL2CAPChannel*)channel {
-    NSLog(@"new channel opened: channel = ");
+    
+    NSLog(@"new channel opened: channel = %d ", channel.PSM);
     
     [channel setDelegate:self];
 }
@@ -109,28 +110,27 @@ enum BTMessageType: UInt8 {
                 return;
             }
             
+            //消息头 取第一个字节的高四位
             uint8 d[1];
             [data getBytes: d length:1];
-            d[0] = d[0] / 16;
-            
+            d[0] = d[0] >> 4;
             enum BTMessageType messageType = (enum BTMessageType) d[0];
-            
-            NSLog(@"message Type %d", messageType);
+            NSLog(@"data arrived: message header %d", messageType);
             
             switch (messageType) {
             case Handshake:
-                    NSLog(@"hand shake");
+                    NSLog(@"data arrived: hand shake ");
                 break;
             case HIDControl:
                 //                NSLog(format: "hid control %@",args: data.debugDescription)
-                
+                    NSLog(@"data arrived: hid control");
                 break;
             case SetReport:
-                    NSLog(@"set report");
+                    NSLog(@"data arrived: set report");
                     [self sendHandShake:l2capChannel Shake: Successful];
                 break;
             case SetProtocol:
-                    NSLog(@"set protocol");
+                    NSLog(@"data arrived: set protocol");
                     [self sendHandShake:l2capChannel Shake:Successful];
                 break;
                 //            case .GetIdle:
@@ -171,15 +171,15 @@ enum BTMessageType: UInt8 {
 }
 
 - (void)l2capChannelReconfigured:(IOBluetoothL2CAPChannel*)l2capChannel{
-    NSLog(@"channel reconfigured, channel = ");
+    NSLog(@"channel reconfigured, channel = %d", l2capChannel.PSM);
 }
 
 - (void)l2capChannelWriteComplete:(IOBluetoothL2CAPChannel*)l2capChannel refcon:(void*)refcon status:(IOReturn)error{
-    NSLog(@"channel write complete, channel = ");
+    NSLog(@"channel write complete, channel = %d", l2capChannel.PSM);
 }
 
 - (void)l2capChannelQueueSpaceAvailable:(IOBluetoothL2CAPChannel*)l2capChannel{
-    NSLog(@"channel queue space availabe, channel = ");
+    NSLog(@"channel queue space availabe, channel = %d", l2capChannel.PSM);
 }
 
 

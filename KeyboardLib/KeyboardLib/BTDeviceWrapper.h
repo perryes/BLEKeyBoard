@@ -15,6 +15,4 @@
 @property (strong) IOBluetoothL2CAPChannel* interruptChannel;
 @property (strong) IOBluetoothL2CAPChannel* controlChannel;
 
-
-
 @end

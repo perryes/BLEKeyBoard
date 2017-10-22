@@ -119,10 +119,9 @@
 -(void) scrollWheel:(NSEvent *)event{
     bool leftDown = (NSEvent.pressedMouseButtons & 0x01) == 0x01;
     bool rightDown = (NSEvent.pressedMouseButtons & 0x02) == 0x02;
-   NSLog(@"mouse scroll: left down =  %@    right down = %@  wheel = %f", leftDown ? @"down" : @"up", rightDown ? @"down" : @"up", event.deltaY);
+    NSLog(@"mouse scroll: left down =  %@    right down = %@  wheel = %f", leftDown ? @"down" : @"up", rightDown ? @"down" : @"up", event.deltaY);
     [[AppDelegate getKeyboard] sendMouse:ceilf(event.deltaX) Dy:ceilf(event.deltaY)
                                    Wheel:event.deltaY LeftButton:false RightButton:false];
 }
-
 
 @end
