@@ -91,7 +91,7 @@
 		<data>ARE=</data>
 	</dict>
 	<key>0202 - HIDDeviceSubclass (Mouse)</key>
-	<integer>64</integer>
+	<integer>128</integer>
 	<key>0203 - HIDCountryCode ( ??)</key>
 	<dict>
 		<key>DataElementType</key>

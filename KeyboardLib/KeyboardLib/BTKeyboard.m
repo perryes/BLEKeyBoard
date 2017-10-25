@@ -86,8 +86,8 @@ enum BTMessageType: UInt8 {
     }
     
     if(self.serviceRecord){
-        NSLog(@"removing service");
-        [self.serviceRecord removeServiceRecord];
+        IOReturn result = [self.serviceRecord removeServiceRecord];
+        NSLog(@"removing service result = %d ", result);
     }
 }
 
@@ -175,7 +175,7 @@ enum BTMessageType: UInt8 {
 }
 
 - (void)l2capChannelWriteComplete:(IOBluetoothL2CAPChannel*)l2capChannel refcon:(void*)refcon status:(IOReturn)error{
-    NSLog(@"channel write complete, channel = %d", l2capChannel.PSM);
+    NSLog(@"channel write complete, channel");
 }
 
 - (void)l2capChannelQueueSpaceAvailable:(IOBluetoothL2CAPChannel*)l2capChannel{
@@ -260,10 +260,9 @@ enum BTMessageType: UInt8 {
 
     [self sendData:bytes Length:11];
     
-   
 }
 
--(void) sendMouse:(int) dx Dy: (int) dy Wheel: (int) wheel LeftButton: (BOOL) leftButton RightButton: (BOOL) rightButton{
+-(void) sendMouse:(float) dx Dy: (float) dy Wheel: (float) wheel LeftButton: (BOOL) leftButton RightButton: (BOOL) rightButton{
     UInt8 button = 0x00;
     if(leftButton){
         button |=1 ;
@@ -276,8 +275,8 @@ enum BTMessageType: UInt8 {
 //    }
     button = button & 0x07;
     
-    dx = dx * 2;
-    dy = dy * 2;
+//    dx = dx * 1.3f;
+//    dy = dy * 1.3f;
     if(dx > 127){
         dx = 127;
     }
@@ -298,7 +297,7 @@ enum BTMessageType: UInt8 {
     }
     int8_t x = dx;
     int8_t y = dy;
-    NSLog(@"x = %d, y = %d", x, y);
+    NSLog(@"x = %f, y = %f", dx, dy);
     int8_t bytes[] = {
         0xA1,     // 0 DATA | INPUT (HIDP Bluetooth)
         0x51,      // 0 Report ID
@@ -306,7 +305,6 @@ enum BTMessageType: UInt8 {
         x,      // x
         y,   // y
         wheel
-        
     };
     
     if (self.deviceWrapper.interruptChannel) {

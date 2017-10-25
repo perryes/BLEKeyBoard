@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacKeyboard/MacKeyboard/AppDelegate.m"
-            timestampString = "530367170.954644"
+            timestampString = "530457269.743967"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "15"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacKeyboard/MacKeyboard/AppDelegate.m"
-            timestampString = "530367170.954843"
+            timestampString = "530457269.744037"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacKeyboard/MacKeyboard/AppDelegate.m"
-            timestampString = "530367170.954908"
+            timestampString = "530457269.744087"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
@@ -248,7 +248,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacKeyboard/MacKeyboard/ViewController.m"
-            timestampString = "530367170.955282"
+            timestampString = "530588458.309337"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "93"
@@ -280,7 +280,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacKeyboard/MacKeyboard/ViewController.m"
-            timestampString = "530367170.955685"
+            timestampString = "530588458.309662"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "109"
@@ -296,12 +296,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacKeyboard/MacKeyboard/ViewController.m"
-            timestampString = "530367170.95596"
+            timestampString = "530588458.309723"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "97"
             endingLineNumber = "97"
             landmarkName = "-mouseDown:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KeyboardLib/KeyboardLib/BTKeyboard.m"
+            timestampString = "530588458.309778"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "311"
+            endingLineNumber = "311"
+            landmarkName = "-sendMouse:Dy:Wheel:LeftButton:RightButton:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

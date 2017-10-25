@@ -32,6 +32,6 @@ enum BTHandShake:UInt8 {
 
 -(void) terminate;
 
--(void) sendMouse:(int) dx Dy: (int) dy Wheel: (int) wheel LeftButton: (BOOL) leftButton RightButton: (BOOL) rightButton;
+-(void) sendMouse:(float) dx Dy: (float) dy Wheel: (float) wheel LeftButton: (BOOL) leftButton RightButton: (BOOL) rightButton;
 
 @end

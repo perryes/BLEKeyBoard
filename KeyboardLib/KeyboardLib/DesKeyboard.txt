@@ -144,7 +144,7 @@ A1 00         Collection (Physical),
 05 01             Usage Page (Generic Desktop),
 09 30             Usage (X),
 09 31             Usage (Y),
-09 38             Usage Wheel
+09 38             Usage Wheel   
 15 81             Logical Minimum (-127),
 25 7F             Logical Maximum (127),
 75 08             Report Size (8),
