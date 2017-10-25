@@ -15,8 +15,13 @@
 		9D4A8E121F9225D700CA68CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4A8E111F9225D700CA68CF /* main.m */; };
 		9D4A8E1D1F9225D700CA68CF /* MacKeyboardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4A8E1C1F9225D700CA68CF /* MacKeyboardTests.m */; };
 		9D4A8E281F9225D700CA68CF /* MacKeyboardUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4A8E271F9225D700CA68CF /* MacKeyboardUITests.m */; };
+		9D7496591FA085F5008B7F03 /* BTDeviceWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D74964E1FA085F4008B7F03 /* BTDeviceWrapper.m */; };
+		9D74965A1FA085F5008B7F03 /* BTKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7496511FA085F5008B7F03 /* BTKeyboard.m */; };
+		9D74965B1FA085F5008B7F03 /* KeyboardLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7496521FA085F5008B7F03 /* KeyboardLib.m */; };
+		9D74965C1FA085F5008B7F03 /* DesKeyboard.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9D7496531FA085F5008B7F03 /* DesKeyboard.txt */; };
+		9D74965D1FA085F5008B7F03 /* KeyCodes.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7496541FA085F5008B7F03 /* KeyCodes.m */; };
+		9D74965E1FA085F5008B7F03 /* HidLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7496561FA085F5008B7F03 /* HidLibrary.m */; };
 		9D8887FC1F98838B00A16C1E /* KeyboardProperty.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D8887FB1F98838B00A16C1E /* KeyboardProperty.plist */; };
-		9D93F28D1F9CB864009DD676 /* libKeyboardLib.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D93F28C1F9CB859009DD676 /* libKeyboardLib.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +60,17 @@
 		9D4A8E271F9225D700CA68CF /* MacKeyboardUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MacKeyboardUITests.m; sourceTree = "<group>"; };
 		9D4A8E291F9225D700CA68CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D4A8E371F9225F400CA68CF /* libHidLibrary.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libHidLibrary.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D74964E1FA085F4008B7F03 /* BTDeviceWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDeviceWrapper.m; sourceTree = "<group>"; };
+		9D74964F1FA085F4008B7F03 /* BTKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTKeyboard.h; sourceTree = "<group>"; };
+		9D7496501FA085F5008B7F03 /* BTDeviceWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDeviceWrapper.h; sourceTree = "<group>"; };
+		9D7496511FA085F5008B7F03 /* BTKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTKeyboard.m; sourceTree = "<group>"; };
+		9D7496521FA085F5008B7F03 /* KeyboardLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardLib.m; sourceTree = "<group>"; };
+		9D7496531FA085F5008B7F03 /* DesKeyboard.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DesKeyboard.txt; sourceTree = "<group>"; };
+		9D7496541FA085F5008B7F03 /* KeyCodes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyCodes.m; sourceTree = "<group>"; };
+		9D7496551FA085F5008B7F03 /* KeyCodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyCodes.h; sourceTree = "<group>"; };
+		9D7496561FA085F5008B7F03 /* HidLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HidLibrary.m; sourceTree = "<group>"; };
+		9D7496571FA085F5008B7F03 /* HidLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HidLibrary.h; sourceTree = "<group>"; };
+		9D7496581FA085F5008B7F03 /* KeyboardLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardLib.h; sourceTree = "<group>"; };
 		9D8887FB1F98838B00A16C1E /* KeyboardProperty.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = KeyboardProperty.plist; sourceTree = "<group>"; };
 		9D8887FD1F98D68600A16C1E /* IOBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetooth.framework; path = System/Library/Frameworks/IOBluetooth.framework; sourceTree = SDKROOT; };
 		9D93F28C1F9CB859009DD676 /* libKeyboardLib.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libKeyboardLib.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,7 +81,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D93F28D1F9CB864009DD676 /* libKeyboardLib.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +125,17 @@
 		9D4A8E041F9225D700CA68CF /* MacKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				9D7496501FA085F5008B7F03 /* BTDeviceWrapper.h */,
+				9D74964E1FA085F4008B7F03 /* BTDeviceWrapper.m */,
+				9D74964F1FA085F4008B7F03 /* BTKeyboard.h */,
+				9D7496511FA085F5008B7F03 /* BTKeyboard.m */,
+				9D7496531FA085F5008B7F03 /* DesKeyboard.txt */,
+				9D7496571FA085F5008B7F03 /* HidLibrary.h */,
+				9D7496561FA085F5008B7F03 /* HidLibrary.m */,
+				9D7496581FA085F5008B7F03 /* KeyboardLib.h */,
+				9D7496521FA085F5008B7F03 /* KeyboardLib.m */,
+				9D7496551FA085F5008B7F03 /* KeyCodes.h */,
+				9D7496541FA085F5008B7F03 /* KeyCodes.m */,
 				9D0ACF351F98DB8F00B07F55 /* MouseProperty.plist */,
 				9D4A8E051F9225D700CA68CF /* AppDelegate.h */,
 				9D4A8E061F9225D700CA68CF /* AppDelegate.m */,
@@ -265,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D4A8E0C1F9225D700CA68CF /* Assets.xcassets in Resources */,
+				9D74965C1FA085F5008B7F03 /* DesKeyboard.txt in Resources */,
 				9D8887FC1F98838B00A16C1E /* KeyboardProperty.plist in Resources */,
 				9D4A8E0F1F9225D700CA68CF /* Main.storyboard in Resources */,
 				9D0ACF361F98DB8F00B07F55 /* MouseProperty.plist in Resources */,
@@ -293,8 +320,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D4A8E0A1F9225D700CA68CF /* ViewController.m in Sources */,
+				9D74965E1FA085F5008B7F03 /* HidLibrary.m in Sources */,
 				9D4A8E121F9225D700CA68CF /* main.m in Sources */,
 				9D4A8E071F9225D700CA68CF /* AppDelegate.m in Sources */,
+				9D74965A1FA085F5008B7F03 /* BTKeyboard.m in Sources */,
+				9D74965B1FA085F5008B7F03 /* KeyboardLib.m in Sources */,
+				9D74965D1FA085F5008B7F03 /* KeyCodes.m in Sources */,
+				9D7496591FA085F5008B7F03 /* BTDeviceWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,7 +493,7 @@
 				INFOPLIST_FILE = MacKeyboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mysun.MacKeyboard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mysun.keyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -483,7 +515,7 @@
 				INFOPLIST_FILE = MacKeyboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mysun.MacKeyboard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mysun.keyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
