@@ -307,8 +307,20 @@ enum BTMessageType: UInt8 {
         wheel
     };
     
+    int8_t hidDataHeader = 0xA1;
+    int8_t repordID = 0x51;
+    
+    NSMutableData* reportData = [NSMutableData dataWithCapacity:0];
+    [reportData appendBytes:&hidDataHeader length:sizeof(int8_t)];
+    [reportData appendBytes:&repordID length:sizeof(int8_t)];
+    [reportData appendBytes:&button length:sizeof(UInt8)];
+    [reportData appendBytes:&dx length:sizeof(float)];
+    [reportData appendBytes:&dy length:sizeof(float)];
+    [reportData appendBytes:&wheel length:sizeof(float)];
+    
     if (self.deviceWrapper.interruptChannel) {
         IOReturn result = [self.deviceWrapper.interruptChannel writeAsync:(bytes) length:6 refcon:nil];
+//        IOReturn result = [self.deviceWrapper.interruptChannel writeAsync:(__bridge void *)(reportData) length:reportData.length refcon:nil];
         if (result != kIOReturnSuccess) {
             NSLog(@"Buff Data Failed \(channel.psm)");
         }else{

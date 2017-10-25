@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacKeyboard/MacKeyboard/AppDelegate.m"
-            timestampString = "530457269.743967"
+            timestampString = "530609591.352752"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "15"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacKeyboard/MacKeyboard/AppDelegate.m"
-            timestampString = "530457269.744037"
+            timestampString = "530609591.352819"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacKeyboard/MacKeyboard/AppDelegate.m"
-            timestampString = "530457269.744087"
+            timestampString = "530609591.352867"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
@@ -248,11 +248,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacKeyboard/MacKeyboard/ViewController.m"
-            timestampString = "530588458.309337"
+            timestampString = "530609591.353051"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "-mouseMoved:"
             landmarkType = "7">
          </BreakpointContent>
@@ -280,11 +280,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacKeyboard/MacKeyboard/ViewController.m"
-            timestampString = "530588458.309662"
+            timestampString = "530609591.353469"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "-mouseUp:"
             landmarkType = "7">
          </BreakpointContent>
@@ -296,11 +296,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacKeyboard/MacKeyboard/ViewController.m"
-            timestampString = "530588458.309723"
+            timestampString = "530609591.353746"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "-mouseDown:"
             landmarkType = "7">
          </BreakpointContent>
@@ -312,11 +312,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KeyboardLib/KeyboardLib/BTKeyboard.m"
-            timestampString = "530588458.309778"
+            timestampString = "530609591.354008"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "311"
-            endingLineNumber = "311"
+            startingLineNumber = "321"
+            endingLineNumber = "321"
+            landmarkName = "-sendMouse:Dy:Wheel:LeftButton:RightButton:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            condition = "wheel &gt; 0"
+            continueAfterRunningActions = "No"
+            filePath = "KeyboardLib/KeyboardLib/BTKeyboard.m"
+            timestampString = "530609591.354058"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "310"
+            endingLineNumber = "310"
             landmarkName = "-sendMouse:Dy:Wheel:LeftButton:RightButton:"
             landmarkType = "7">
          </BreakpointContent>
