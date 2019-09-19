@@ -51,11 +51,17 @@ enum BTMessageType: UInt8 {
     // Minor Device Class - Keyboard
     // Major Device Class - Peripheral
     // Limited Discoverable Mode
-    // 1 00101 1000 00 00         Mouse
+    
+    // 10 0101 1000 0000         Mouse
+//    [controllor setClassOfDevice:0x002580 forTimeInterval:60];
+    
     // 1 00101 1100 00 00  Mouse and Keyboard
     [controllor setClassOfDevice:0x0025C0 forTimeInterval:60];
+   
     //Keyboard
     //[controllor setClassOfDevice:0x002540 forTimeInterval:60];
+    
+    
     
     
 //    NSString* bundlePath = [[NSBundle mainBundle] pathForResource:@"KeyboardProperty" ofType:@"plist"];
@@ -103,7 +109,12 @@ enum BTMessageType: UInt8 {
 - (void)l2capChannelData:(IOBluetoothL2CAPChannel*)l2capChannel data:(void *)dataPointer length:(size_t)dataLength{
         NSData* data = [[NSData alloc] initWithBytes:dataPointer length:dataLength];
     
-        NSLog(@"channel data, ");
+    if(data){
+        NSLog(@"channel data = %@", data);
+    }else{
+        NSLog(@"channel data, empty data");
+    }
+    
         
         if (l2capChannel.PSM == kBluetoothL2CAPPSMHIDControl) {
             if(dataLength <= 0){
@@ -297,7 +308,9 @@ enum BTMessageType: UInt8 {
     int8_t y = dy;
     NSLog(@"x = %f, y = %f", dx, dy);
     int8_t bytes[] = {
-        0xA1,     // 0 DATA | INPUT (HIDP Bluetooth)
+        0xA1,     // A => DATA   1 => INPUT (HIDP Bluetooth)
+        0x02,
+        
         0x51,      // 0 Report ID
         button,  // buttons
         x,      // x
@@ -327,6 +340,86 @@ enum BTMessageType: UInt8 {
     
 }
 
+
+-(void) sendMouseAbsoulte:(float) dx Dy: (float) dy Wheel: (float) wheel LeftButton: (BOOL) leftButton RightButton: (BOOL) rightButton{
+    
+    UInt8 button = 0x00;
+    if(leftButton){
+        button |=1 ;
+    }
+    if(rightButton){
+        button|=2;
+    }
+    button = button & 0x07;
+    
+    if(wheel > 127){
+        wheel = 127;
+    }
+    if(wheel < -127){
+        wheel = -127;
+    }
+    
+
+    NSLog(@"org_x= %f, org_y = %f", dx, dy);
+    //1440 * 900   mac
+    //2880 * 1800
+//    int32_t x = (int32_t) (dx * 24);
+//    int32_t x = (int32_t) (dx * 24);
+//    int32_t y = (int32_t) ((900 - dy) * 36);
+//    int32_t y = (int32_t) ((900 - dy) * 36);
+    int32_t x = dx;
+    int32_t y = dy;
+
+    if (x > 32767) {
+        x = 32767;
+    }
+    if (y > 32767) {
+        y = 32767;
+    }
+    if (x < 0) {
+        x = 0;
+    }
+    if (y < 0) {
+        y = 0;
+    }
+    int8_t x1 = x & 0xff;
+    int8_t x2 = (x >> 8) & 0xff;
+    int8_t y1 = y & 0xff;
+    int8_t y2 = (y >> 8) & 0xff;
+    NSLog(@" x= %d, y = %d,  x1 = %x, x2 = %x, y1 = %x, y2 = %x", x, y, x1, x2, y1, y2);
+    int8_t bytes[] = {
+        0xA1,     // 0 DATA | INPUT (HIDP Bluetooth)
+        0x02,  //Report id
+        x1,
+        x2,
+        y1,
+        y2,
+        wheel,
+        button
+    };
+    
+    //    int8_t hidDataHeader = 0xA1;
+    //    int8_t repordID = 0x51;
+    //    NSMutableData* reportData = [NSMutableData dataWithCapacity:0];
+    //    [reportData appendBytes:&hidDataHeader length:sizeof(int8_t)];
+    //    [reportData appendBytes:&repordID length:sizeof(int8_t)];
+    //    [reportData appendBytes:&button length:sizeof(UInt8)];
+    //    [reportData appendBytes:&dx length:sizeof(float)];
+    //    [reportData appendBytes:&dy length:sizeof(float)];
+    //    [reportData appendBytes:&wheel length:sizeof(float)];
+    
+    if (self.deviceWrapper.interruptChannel) {
+        IOReturn result = [self.deviceWrapper.interruptChannel writeAsync:(bytes) length:8 refcon:nil];
+        //        IOReturn result = [self.deviceWrapper.interruptChannel writeAsync:(__bridge void *)(reportData) length:reportData.length refcon:nil];
+        if (result != kIOReturnSuccess) {
+            NSLog(@"Buff Data Failed, errorCode = %d ", result);
+        }else{
+            NSLog(@"Buff data success");
+        }
+    }
+    
+}
+
 -(void) connect:(int)type{
    
     if(self.deviceWrapper == nil || self.deviceWrapper.device == nil){
@@ -339,6 +432,7 @@ enum BTMessageType: UInt8 {
             //LIUYANG-NUC
             //Galaxy S8+
             //王佳星的MacBook Pro
+            //Xiaomi M( Note 2
             if([d.name isEqualTo:@"王佳星的MacBook Pro"]){
 //            if([d.name isEqualTo:@"iPet"]){
                 self.deviceWrapper = [[BTDeviceWrapper alloc] init];
@@ -364,6 +458,10 @@ enum BTMessageType: UInt8 {
         
         NSLog(@"open channel result =  %d psm = %d", result, channel.PSM);
     }
+}
+
+-(NSArray<IOBluetoothDevice*> *)getDevices{
+    return [IOBluetoothDevice pairedDevices];
 }
 
 @end

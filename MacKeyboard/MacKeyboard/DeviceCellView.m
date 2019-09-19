@@ -7,3 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DeviceCellView.h"
+
+@interface DeviceCellView()
+
+@end
+
+@implementation DeviceCellView
+
+
+
+- (void)awakeFromNib {
+    NSLog(@"awake from nib");
+}
+
+@end

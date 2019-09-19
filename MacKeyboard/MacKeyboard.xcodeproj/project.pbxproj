@@ -22,6 +22,7 @@
 		9D74965D1FA085F5008B7F03 /* KeyCodes.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7496541FA085F5008B7F03 /* KeyCodes.m */; };
 		9D74965E1FA085F5008B7F03 /* HidLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7496561FA085F5008B7F03 /* HidLibrary.m */; };
 		9D8887FC1F98838B00A16C1E /* KeyboardProperty.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D8887FB1F98838B00A16C1E /* KeyboardProperty.plist */; };
+		9D9637BB1FA9B2840072F3E1 /* DeviceCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9637BA1FA9B2840072F3E1 /* DeviceCellView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,8 @@
 		9D8887FB1F98838B00A16C1E /* KeyboardProperty.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = KeyboardProperty.plist; sourceTree = "<group>"; };
 		9D8887FD1F98D68600A16C1E /* IOBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetooth.framework; path = System/Library/Frameworks/IOBluetooth.framework; sourceTree = SDKROOT; };
 		9D93F28C1F9CB859009DD676 /* libKeyboardLib.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libKeyboardLib.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D9637B71FA9B18B0072F3E1 /* DeviceCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceCellView.h; sourceTree = "<group>"; };
+		9D9637BA1FA9B2840072F3E1 /* DeviceCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceCellView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +150,8 @@
 				9D4A8E111F9225D700CA68CF /* main.m */,
 				9D4A8E131F9225D700CA68CF /* MacKeyboard.entitlements */,
 				9D8887FB1F98838B00A16C1E /* KeyboardProperty.plist */,
+				9D9637B71FA9B18B0072F3E1 /* DeviceCellView.h */,
+				9D9637BA1FA9B2840072F3E1 /* DeviceCellView.m */,
 			);
 			path = MacKeyboard;
 			sourceTree = "<group>";
@@ -324,6 +329,7 @@
 				9D4A8E121F9225D700CA68CF /* main.m in Sources */,
 				9D4A8E071F9225D700CA68CF /* AppDelegate.m in Sources */,
 				9D74965A1FA085F5008B7F03 /* BTKeyboard.m in Sources */,
+				9D9637BB1FA9B2840072F3E1 /* DeviceCellView.m in Sources */,
 				9D74965B1FA085F5008B7F03 /* KeyboardLib.m in Sources */,
 				9D74965D1FA085F5008B7F03 /* KeyCodes.m in Sources */,
 				9D7496591FA085F5008B7F03 /* BTDeviceWrapper.m in Sources */,

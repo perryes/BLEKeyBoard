@@ -12,6 +12,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.tbDevices setDataSource:self];
+    [self.tbDevices setDelegate:self];
     
 //    self.keyBoard = [[BTKeyboard alloc] init];
     [AppDelegate getKeyboard];
@@ -93,30 +95,106 @@
 
 -(void) mouseMoved:(NSEvent *)event {
     
-    [[AppDelegate getKeyboard] sendMouse:event.deltaX Dy:event.deltaY Wheel:0 LeftButton:false RightButton:false];
+//    [[AppDelegate getKeyboard] sendMouse:event.deltaX Dy:event.deltaY Wheel:0 LeftButton:false RightButton:false];
+    
+//    NSPoint event_location = [event locationInWindow];
+//    NSPoint local_point = [self.view convertPoint:event_location fromView:nil];
+    
+    
+    //    NSPoint pointInScreen =  [self.view.window convertPointToScreen:_pointInView];
+    //    [[AppDelegate getKeyboard] sendMouseAbsoulte:pointInScreen.x Dy:pointInScreen.y Wheel:0 LeftButton:false RightButton:false];
+    
+    NSPoint screenPoint = [NSEvent mouseLocation];
+    NSRect screenRect = CGRectMake(screenPoint.x, screenPoint.y, 1.0, 1.0);
+    NSRect baseRect = [self.view.window convertRectFromScreen:screenRect];
+    NSPoint _pointInView = [self.view convertPoint:baseRect.origin fromView:nil];
+    
+    if (CGRectContainsPoint(self.view.bounds, _pointInView)) {
+        //1440 * 900   mac
+        //2880 * 1800
+        //    int32_t x = (int32_t) (dx * 24);
+        //    int32_t x = (int32_t) (dx * 24);
+        //    int32_t y = (int32_t) ((900 - dy) * 36);
+        //    int32_t y = (int32_t) ((900 - dy) * 36);
+        float x = ((1440 * 24) / self.view.bounds.size.width) * _pointInView.x;
+        float y = ((900 * 36) / self.view.bounds.size.height) * (self.view.bounds.size.height - _pointInView.y);
+        [[AppDelegate getKeyboard] sendMouseAbsoulte:x Dy:y Wheel:0 LeftButton:false RightButton:false];
+    }
 }
 
 -(void) mouseDown:(NSEvent *)event{
     bool leftDown = (NSEvent.pressedMouseButtons & 0x01) == 0x01;
     bool rightDown = (NSEvent.pressedMouseButtons & 0x02) == 0x02;
-    NSLog(@"mouse down: left down =  %@    right down = %@", leftDown ? @"down" : @"up", rightDown ? @"down" : @"up");
-    [[AppDelegate getKeyboard] sendMouse:event.deltaX Dy:event.deltaY Wheel:0 LeftButton:leftDown RightButton:rightDown];
+//    NSLog(@"mouse down: left down =  %@    right down = %@", leftDown ? @"down" : @"up", rightDown ? @"down" : @"up");
+//    [[AppDelegate getKeyboard] sendMouse:event.deltaX Dy:event.deltaY Wheel:0 LeftButton:leftDown RightButton:rightDown];
+
+
+    NSPoint screenPoint = [NSEvent mouseLocation];
+    NSRect screenRect = CGRectMake(screenPoint.x, screenPoint.y, 1.0, 1.0);
+    NSRect baseRect = [self.view.window convertRectFromScreen:screenRect];
+    NSPoint _pointInView = [self.view convertPoint:baseRect.origin fromView:nil];
+    
+    if (CGRectContainsPoint(self.view.bounds, _pointInView)) {
+        //1440 * 900   mac
+        //2880 * 1800
+        //    int32_t x = (int32_t) (dx * 24);
+        //    int32_t x = (int32_t) (dx * 24);
+        //    int32_t y = (int32_t) ((900 - dy) * 36);
+        //    int32_t y = (int32_t) ((900 - dy) * 36);
+        float x = ((1440 * 24) / self.view.bounds.size.width) * _pointInView.x;
+        float y = ((900 * 36) / self.view.bounds.size.height) * (self.view.bounds.size.height - _pointInView.y);
+        [[AppDelegate getKeyboard] sendMouseAbsoulte:x Dy:y Wheel:0 LeftButton:leftDown RightButton:rightDown];
+    }
 }
 
 -(void) mouseUp:(NSEvent *)event{
     bool leftDown = (NSEvent.pressedMouseButtons & 0x01) == 0x01;
     bool rightDown = (NSEvent.pressedMouseButtons & 0x02) == 0x02;
     NSLog(@"mouse up: left down =  %@    right down = %@", leftDown ? @"down" : @"up", rightDown ? @"down" : @"up");
-    [[AppDelegate getKeyboard] sendMouse:event.deltaX Dy:event.deltaY
-                                   Wheel:0 LeftButton:leftDown RightButton:rightDown];
+//    [[AppDelegate getKeyboard] sendMouse:event.deltaX Dy:event.deltaY
+//                                   Wheel:0 LeftButton:leftDown RightButton:rightDown];
+    
+    NSPoint screenPoint = [NSEvent mouseLocation];
+    NSRect screenRect = CGRectMake(screenPoint.x, screenPoint.y, 1.0, 1.0);
+    NSRect baseRect = [self.view.window convertRectFromScreen:screenRect];
+    NSPoint _pointInView = [self.view convertPoint:baseRect.origin fromView:nil];
+    
+    if (CGRectContainsPoint(self.view.bounds, _pointInView)) {
+        //1440 * 900   mac
+        //2880 * 1800
+        //    int32_t x = (int32_t) (dx * 24);
+        //    int32_t x = (int32_t) (dx * 24);
+        //    int32_t y = (int32_t) ((900 - dy) * 36);
+        //    int32_t y = (int32_t) ((900 - dy) * 36);
+        float x = ((1440 * 24) / self.view.bounds.size.width) * _pointInView.x;
+        float y = ((900 * 36) / self.view.bounds.size.height) * (self.view.bounds.size.height - _pointInView.y);
+        [[AppDelegate getKeyboard] sendMouseAbsoulte:x Dy:y Wheel:0 LeftButton:leftDown RightButton:rightDown];
+    }
 }
 
 -(void) mouseDragged:(NSEvent *)event{
     bool leftDown = (NSEvent.pressedMouseButtons & 0x01) == 0x01;
     bool rightDown = (NSEvent.pressedMouseButtons & 0x02) == 0x02;
     NSLog(@"mouse drag: left down =  %@    right down = %@", leftDown ? @"down" : @"up", rightDown ? @"down" : @"up");
-    [[AppDelegate getKeyboard] sendMouse:event.deltaX Dy:event.deltaY
-                                   Wheel:0 LeftButton:true RightButton:rightDown];
+//    [[AppDelegate getKeyboard] sendMouse:event.deltaX Dy:event.deltaY
+//                                   Wheel:0 LeftButton:true RightButton:rightDown];
+    
+    NSPoint screenPoint = [NSEvent mouseLocation];
+    NSRect screenRect = CGRectMake(screenPoint.x, screenPoint.y, 1.0, 1.0);
+    NSRect baseRect = [self.view.window convertRectFromScreen:screenRect];
+    NSPoint _pointInView = [self.view convertPoint:baseRect.origin fromView:nil];
+    
+    if (CGRectContainsPoint(self.view.bounds, _pointInView)) {
+        //1440 * 900   mac
+        //2880 * 1800
+        //    int32_t x = (int32_t) (dx * 24);
+        //    int32_t x = (int32_t) (dx * 24);
+        //    int32_t y = (int32_t) ((900 - dy) * 36);
+        //    int32_t y = (int32_t) ((900 - dy) * 36);
+        float x = ((1440 * 24) / self.view.bounds.size.width) * _pointInView.x;
+        float y = ((900 * 36) / self.view.bounds.size.height) * (self.view.bounds.size.height - _pointInView.y);
+        [[AppDelegate getKeyboard] sendMouseAbsoulte:x Dy:y Wheel:0 LeftButton:true RightButton:rightDown];
+    }
 }
 
 -(void) scrollWheel:(NSEvent *)event{
@@ -131,8 +209,51 @@
     }else if(event.deltaY < -1){
         wheel = -1;
     }
-    [[AppDelegate getKeyboard] sendMouse:0 Dy:0
+//    [[AppDelegate getKeyboard] sendMouse:0 Dy:0
+//                                   Wheel:wheel LeftButton:false RightButton:false];
+    
+    [[AppDelegate getKeyboard] sendMouseAbsoulte:0 Dy:0
                                    Wheel:wheel LeftButton:false RightButton:false];
+}
+
+-(NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
+    NSArray* devices = [[AppDelegate getKeyboard] getDevices];
+    return [devices count];
+}
+
+- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row{
+    NSTableCellView* v;
+    v = [tableView makeViewWithIdentifier:tableColumn.identifier owner:nil];
+    
+     NSArray* devices = [[AppDelegate getKeyboard] getDevices];
+    IOBluetoothDevice* d = [devices objectAtIndex:row];
+    int column = 0;
+    if(tableColumn == tableView.tableColumns[0]){
+        column = 0;
+        v.textField.stringValue = d.nameOrAddress;
+        
+    }else if(tableColumn == tableView.tableColumns[1]){
+        column = 1;
+        if(d.lastNameUpdate){
+            v.textField.stringValue = d.lastNameUpdate.description;
+        }else{
+            v.textField.stringValue = @"null";
+        }
+        
+    }else if(tableColumn == tableView.tableColumns[2]){
+        column = 2;
+        if(d.services){
+            IOBluetoothSDPServiceRecord *r = [d.services objectAtIndex:0];
+            NSLog(@"device = %@", d);
+//            v.textField.stringValue = [[[r attributes] valueForKey:@"description"] componentsJoinedByString:@" "];
+            NSLog(@"service %@", r);
+        }else{
+            v.textField.stringValue = @"2";
+        }
+        
+    }
+    
+    return v;
 }
 
 @end

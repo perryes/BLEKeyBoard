@@ -135,28 +135,227 @@ A1 00         Collection (Physical),
 29 03             Usage Maximun (03),
 15 00             Logical Minimum (0),
 25 01             Logical Maximum (1),
+
 95 03             Report Count (3),
 75 01             Report Size (1),
 81 02             Input (Data, Variable, Absolute), ;3 button bits
+
 95 01             Report Count (1),
 75 05             Report Size (5),
 81 01             Input (Constant), ;5 bit padding 00000
+
 05 01             Usage Page (Generic Desktop),
 09 30             Usage (X),
 09 31             Usage (Y),
 09 38             Usage Wheel   
 15 81             Logical Minimum (-127),
 25 7F             Logical Maximum (127),
-75 08             Report Size (8),
+
 95 03             Report Count (3),
+75 08             Report Size (8),
 81 06             Input (Data, Variable, Relative);2 position bytes (X & Y)   0000
+
 C0         End Collection,
 C0    End Collection
-
 
 //Mouse Keyboard
 05010902 A1018551 0901A100 05091901 29031500 25019503 75018102 95017505 81010501 09300931 09381581 257F7508 95038106 C0C0 05010906 a1018501 050719e0 29e71500 25017501 95088102 95017508 81010508 19012905 95057501 91029501 75039101 05071900 2aff0095 06750815 0026ff00 810005ff 09037508 95018102 c0050c09 01a10185 52050c75 01950115 00250109 cd810609 b5810209 b6810209 b8810609 e2810609 ea810209 e9810281 01c0
 
-<05010902 a1018551 0901a100 05091901 29031500 25019503 75018102 95017505 81010501 09300931 09381581 257f7508 95038106 c0c00501 0906a101 85010507 19e029e7 15002501 75019508 81029501 75088101 05081901 29059505 75019102 95017503 91010507 19002aff 00950675 08150026 ff008100 05ff0903 75089501 8102c005 0c0901a1 01855205 0c750195 01150025 0109cd81 0609b581 0209b681 0209b881 0609e281 0609ea81 0209e981 028101c0>
+//Mouse Keyboard, relative mouse work, absolute not work.
+<05010902 a1018551 0901a100 05091901 29031500 25019503 75018102 95017505 81010501 09300931 09381581 257f7508 95038106 c0c0
+    0501 0906a101 85010507 19e029e7 15002501 75019508 81029501 75088101 05081901 29059505 75019102 95017503 91010507 19002aff 00950675 08150026 ff008100 05ff0903 75089501 8102c005 0c0901a1 01855205 0c750195 01150025 0109cd81 0609b581 0209b681 0209b881 0609e281 0609ea81 0209e981 028101c0>
 
 
+05 01
+09 02
+a1 01
+85 51
+09 01
+a1 00
+05 09
+19 01
+29 03
+15 00
+25 01
+95 03
+75 01
+81 02
+95 01
+75 05
+81 01
+05 01
+09 30
+09 31
+09 38
+15 81
+25 7f
+75 08
+95 03
+81 06
+c0 c0
+
+05 01
+09 06
+a1 01
+85 01
+05 07
+19 e0
+29 e7
+15 00
+25 01
+75 01
+95 08
+81 02
+95 01
+75 08
+81 01
+05 08
+19 01
+29 05
+95 05
+75 01
+91 02
+95 01
+75 03
+91 01
+05 07
+19 00
+2a ff
+00 95
+06 75
+08 15
+00 26
+ff 00
+81 00
+05 ff
+09 03
+75 08
+95 01
+81 02
+c0 05
+0c 09
+01 a1
+01 85
+52 05
+0c 75
+01 95
+01 15
+00 25
+01 09
+cd 81
+06 09
+b5 81
+02 09
+b6 81
+02 09
+b8 81
+06 09
+e2 81
+06 09
+ea 81
+02 09
+e9 81
+02 81
+01 c0
+
+
+
+
+
+
+05 01   // Usage Page  Generic Desktop
+09 02   // Usage 09 Mouse 02
+    A1 01   // Collection Application
+
+        85 02  //Report ID
+
+        09 01   // Usage 09 Pointer 01
+        A1 00   // Collection Physical
+
+        05 01   // Usage Page 05    Generic Desktop 01
+        09 30   // Usage 09   X: 30
+        09 31   // Usage      Y: 31
+        15 00   // Logical Minimum 15     00
+        26 0c7f // Logical Maxmum  26     32767
+        75 10   // Report Size      10;
+        95 02   // Report Count    02
+        81 02   // Input 81        Data,Varaible,Absolute
+
+        05 01   //Usage Page 05         Generic Desktop: 01
+        09 38   //Usage 09    Scroll 38
+        15 81   // Logical Minimum 15     -127
+        25 7f   // Logical Maxmum 16   127
+        75 08   // Report Size
+        95 01   // Report Count 95
+        81 06   // Input 81   06
+
+        05 09   // Usage Page    Buttons
+        19 01   // Usage Minimum
+        29 03   // Usage Maxmum
+        15 00   // Logical Minimum
+        25 01   // Logical Maxmum
+        95 03   // Report Count
+        75 01   // Report Size
+        81 02   // Input 81   02
+
+        95 01   // Report Count
+        75 05   // Report Size
+        81 01   // Input 81   01
+    C0          //End Collection
+
+
+C0      //End Collection
+
+Mouse Absolute
+0501 0902 A101 8502 0901 A100 0501 0930 0931 1500 26 ef7f 7510 9502 8102 0501 0938 1581 257f 7508 9501 8106 0509 1901 2903 1500 2501 9503 7501 8102 9501 7505 8101 C0C0
+
+Keyboard Device
+0906 a1 01 85 01 05 07 19 e0 29 e7 15 00 25 01 75 01 95 08 81 02 95 01 75 08 81 01 05 08 19 01 29 05 95 05 75 01 91 02 95 01 75 03 91 01 05 07 19 00 2a ff 00 95 06 75 08 15 00 26 ff 00 81 00 05 ff 09 03 75 08 95 01 81 02 c0
+
+Mouse & Keyboard
+0501 0902 A101 8502 0901 A100 0501 0930 0931 1500 26 ef7f 7510 9502 8102 0501 0938 1581 257f 7508 9501 8106 0509 1901 2903 1500 2501 9503 7501 8102 9501 7505 8101 C0C0
+0501 0906 a1 01 85 01 05 07 19 e0 29 e7 15 00 25 01 75 01 95 08 81 02 95 01 75 08 81 01 05 08 19 01 29 05 95 05 75 01 91 02 95 01 75 03 91 01 05 07 19 00 2a ff 00 95 06 75 08 15 00 26 ff 00 81 00 05 ff 09 03 75 08 95 01 81 02 c0
+
+05 01   // Usage Page  Generic Desktop
+09 06   // Usage Keyboard
+    a1 01  //Collection Application
+        85 02  //Report Id
+        05 07  //Usage Page (Keyboard/Keypad Page)
+
+        19 e0  //Usage Minimum
+        29 e7  //Usage Maximum
+        15 00  //Logical Minimum
+        25 01  //Logical Maximum
+        75 01  //Report Size
+        95 08  //Report Count
+        81 02  //Input
+
+        95 01  //Report Count
+        75 08  //Report Size
+        81 01  //Input
+
+        05 08  //Usage Page (LEDs)
+        19 01  //Usage Minimum
+        29 05  //Usage Maximum
+        95 05  //Report Count
+        75 01  //Report Size
+        91 02  //Output (Data,Var,Abs,No Wrap,Linear,Preferred State,No Null Position,Non-volatile)
+        95 01  //Report Count
+        75 03  //Report Size
+        91 01  //Output (Const,Array,Abs,No Wrap,Linear,Preferred State,No Null Position,Non-volatile)
+
+        05 07  //Usage Page (Kbrd/Keypad)
+        19 00  //Usage Minimum (0x00)
+        2a ff00//Usage Maximum (0xFF)
+        95 06  //Report Count (6)
+        75 08  //Report Size (8)
+        15 00  //Logical Minimum (0)
+        26 ff00//Logical Maximum (255)
+        81 00  //Input (Data,Array,Abs,No Wrap,Linear,Preferred State,No Null Position)
+
+        05 ff  //Usage Page (0xFF)
+        09 03  //Usage Reserved (0x03)
+        75 08  //Report Size
+        95 01  //Report Count (1)
+        81 02  //Input (Data,Var,Abs,No Wrap,Linear,Preferred State,No Null Position)
+    c0      //End Collection

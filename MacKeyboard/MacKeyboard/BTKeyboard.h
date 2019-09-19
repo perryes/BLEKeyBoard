@@ -34,4 +34,7 @@ enum BTHandShake:UInt8 {
 
 -(void) sendMouse:(float) dx Dy: (float) dy Wheel: (float) wheel LeftButton: (BOOL) leftButton RightButton: (BOOL) rightButton;
 
+-(void) sendMouseAbsoulte:(float) dx Dy: (float) dy Wheel: (float) wheel LeftButton: (BOOL) leftButton RightButton: (BOOL) rightButton;
+
+-(NSArray<IOBluetoothDevice*> *) getDevices;
 @end

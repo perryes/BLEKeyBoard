@@ -10,8 +10,10 @@
 #import "BTKeyboard.h"
 #import "AppDelegate.h"
 
-@interface ViewController : NSViewController
+@interface ViewController : NSViewController<NSTableViewDataSource, NSTableViewDelegate>
 
 @property BTKeyboard* keyBoard;
+@property (weak) IBOutlet NSTableView *tbDevices;
+
 @end
 

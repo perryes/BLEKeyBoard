@@ -9,5 +9,12 @@
 #ifndef DeviceCellView_h
 #define DeviceCellView_h
 
+#import <AppKit/NSTableCellView.h>
+
+@interface DeviceCellView : NSTableCellView
+
+
+
+@end
 
 #endif /* DeviceCellView_h */
